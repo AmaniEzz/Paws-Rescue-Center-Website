@@ -1,0 +1,19 @@
+{% extends "base_layout.html" %}
+
+<!-- Replacement for Title -->
+{% block title %}
+Details 
+{% endblock %}
+
+<!-- Replacement for Content -->
+{% block content %}
+<div class="container">
+      <div class="card" >
+        <img src= "{{url_for('static', filename = pet["id"]|string+".jpg")}}" alt="Jane" style="width:100%">
+        <article>
+            <h2>{{ pet["name"] }}</h2>
+            <p class="title">{{ pet["age"] }}</p>
+            <p> {{ pet["bio"] }}</p>
+        </article>
+      </div>
+{% endblock %}

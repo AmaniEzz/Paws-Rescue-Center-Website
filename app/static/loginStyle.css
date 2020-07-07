@@ -1,0 +1,170 @@
+
+ /* [ Log in Form ]*/
+  
+  .login-form {
+    width: 100%;
+    height: 0 auto
+  }
+  
+  .login-form-title {
+    font-family:  monospace;
+    color: #343a40;
+    line-height: 3.2;
+    text-align: start;
+    text-transform: capitalize;
+    display: block;
+    font-weight: bold; 
+    font-size: 30px;
+  }
+  
+  
+  /*[ Input ]*/
+  
+  .wrap-input {
+    font-family:Linearicons-Free;
+    width: 90%;
+    border-bottom: 1.5px solid rgb(255, 255, 255);
+    padding: 30px 0;
+  }
+  
+  .input {
+    outline: none;
+    border: none;
+    font-size: 20px;
+    line-height: inherit;
+    display: block;
+    width: 100%;
+    height: 0 auto;
+    background: transparent;
+    padding: 0 10px 0 80px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+  /*---------------------------------------------*/ 
+  .focus-input {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  
+  .focus-input::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  
+    background: #1853d4;
+    background: -webkit-linear-gradient(left, #5078c2, #5078c2, #91aee4);
+    background: linear-gradient(left, #5078c2, #5078c2, #91aee4);
+  }
+  
+  .focus-input::after {
+    font-size: 18px;
+    color: #4f4f52;
+    content: attr(data-placeholder);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    left: 35px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+
+  input:focus::placeholder { 
+  color:transparent;
+   }
+  input::placeholder { 
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .input:focus {
+    padding-left: 60px;
+  }
+  .input:focus + .focus-input::before {
+    width: 100%;
+  }
+  .input:focus + .focus-input::after {
+    left: 23px;
+    color: #0827d4;
+  }
+  
+  
+  
+  /*[ Button ]*/
+  .container-login-form-btn {
+    margin-top: 32px;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .login-form-btn {
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: none;
+    display: -webkit-box;
+    border: none;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    min-width: 120px;
+    height: 40px;
+    border-radius: 21px;
+    background: #1e96b8;
+    background: -webkit-linear-gradient(left, #1e96b8, #40a4bb, #7aadbb);
+    background: linear-gradient(left, #1e96b8, #40a4bb, #7aadbb);
+    position: relative;
+    z-index: 1;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+  .login-form-btn::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 21px;
+    background-color: #555555;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+  .login-form-btn:hover {
+    background-color: transparent;
+  }
+  
+  .login-form-btn:hover:before {
+    opacity: 1;
+  }
+  
+  .icon-input {
+    font-family:Linearicons-Free;
+    position: relative;
+  }
+  
+  
+  
+  

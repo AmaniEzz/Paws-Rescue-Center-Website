@@ -1,0 +1,5 @@
+CREATE TABLE PETS (
+    id: SERIAL PRIMARY KEY,
+    pet_name: VARCHAR NOT NULL,
+    bio: VARCHAR NOT NULL
+);

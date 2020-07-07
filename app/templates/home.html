@@ -1,0 +1,32 @@
+{% extends "base_layout.html" %}
+
+<!-- Replacement for Title -->
+{% block title %}
+Home 
+{% endblock %}
+
+
+
+<!-- Replacement for Content -->
+{% block content %}
+ 
+<div class="about-section">
+  <h1 style="text-align: center;">Paws Rescue Center 🐾</h1>
+  <p>We are tiny kittens and puppies rescued by the good people at Paws Rescue Center.
+</div> 
+
+  <div class="container">
+    {% for pet in pets %}
+    <div class="card">
+      <img src="{{url_for('static', filename = pet["id"]|string+".jpg")}}" class="card-img-top" alt="Jane">
+      <div class="card-body">
+        <h5 class="card-title"> {{ pet["name"] }} </h5>
+        <p class="sub-title">{{ pet["age"] }}</p>
+        <p class="card-text"> {{ pet["bio"] }} </p>
+        <a href="{{url_for('pet_details', pet_ID = pet['id'])}}" class="login-form-btn">Adopt me</a>
+      </div>
+    </div>
+     {% endfor %}
+  </div>
+
+{% endblock %}
