@@ -1,5 +1,5 @@
 from flask import Flask, render_template, abort
-from forms import LoginForm
+from app.forms import LoginForm
 
 
 app = Flask(__name__)
