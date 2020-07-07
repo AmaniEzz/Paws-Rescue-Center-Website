@@ -4,5 +4,5 @@ import logging
 logging.basicConfig(stream=sys.stderr)
 sys.path.insert(0,"/var/www/FlaskApp/")
 
-from FlaskApp import app as application
+import app as application
 application.secret_key = 'HSHDBANYS6DJ2'
