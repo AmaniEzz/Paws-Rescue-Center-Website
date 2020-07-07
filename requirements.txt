@@ -133,8 +133,6 @@ py==1.8.1
 pyasn1==0.4.8
 pyasn1-modules==0.2.7
 pyaudioanalysis==0.2.5
-# Editable install with no version control (pyaudioprocessing==1.0)
--e c:\users\amany\anaconda3\lib\site-packages\pyaudioprocessing-1.0-py3.7.egg
 pycodestyle==2.5.0
 pycosat==0.6.3
 pycparser==2.20
