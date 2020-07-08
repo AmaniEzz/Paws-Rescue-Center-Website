@@ -18,7 +18,10 @@
   overflow: hidden;
 }
 
-
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
 .about-section {
   margin: 0;
   padding: 50px;
@@ -76,8 +79,9 @@
   padding: 20px;
 }
 
+
 /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 800px) {
   #navbar {
     padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
 
@@ -101,15 +105,41 @@
     float: none;
   }
   .card {
-    width: 48%;
+    width: 45%;
+    height:23.7%;
+  }
+
+  div.card-body{
+   font-size: 15px;
+    width: 100%;
+    height:25%;
+    padding: 10px;
+    margin: 0 0;
+
+  }
+
+  h5.card-title{
+    font-size:small;
+    margin: 0 0;
+
+  }
+  
+  .sub-title{
+    font-size:15px;
+    margin: 0 0;
+
+  }
+  .card-text{
+    margin: 0 0;
+    margin-bottom:10px;
+    font-size: 12px ;
   }
   .container{
-    margin-top: 250px;
+    margin-top: 30px;
   }
-}
+
   
-
-
+}
 
 .sub-title {
   color: grey;

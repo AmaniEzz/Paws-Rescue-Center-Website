@@ -8,7 +8,7 @@ Details
 <!-- Replacement for Content -->
 {% block content %}
 <div class="container">
-      <div class="card" >
+      <div class="card" style="width: 50%;" >
         <img src= "{{url_for('static', filename = pet["id"]|string+".jpg")}}" alt="Jane" style="width:100%">
         <article>
             <h2>{{ pet["name"] }}</h2>
@@ -16,4 +16,5 @@ Details
             <p> {{ pet["bio"] }}</p>
         </article>
       </div>
+</div>
 {% endblock %}

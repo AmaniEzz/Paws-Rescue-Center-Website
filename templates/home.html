@@ -23,7 +23,9 @@ Home
         <h5 class="card-title"> {{ pet["name"] }} </h5>
         <p class="sub-title">{{ pet["age"] }}</p>
         <p class="card-text"> {{ pet["bio"] }} </p>
-        <a href="{{url_for('pet_details', pet_ID = pet['id'])}}" class="login-form-btn">Adopt me</a>
+        <a id="adopt-btn" href="{{url_for('pet_details', pet_ID = pet['id'])}}"class=" login-form-btn" style="color: white; width: 50%;">
+            Adopt me
+        </a>
       </div>
     </div>
      {% endfor %}

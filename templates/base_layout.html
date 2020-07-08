@@ -4,11 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='Linearicons-Free-v1.0.0/icon-font.min.css')}}" >
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
         <link rel="stylesheet" href="{{url_for('static', filename='loginStyle.css')}}" />
 
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+        </script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
         <title>{% block title %}<!-- Placeholder for Title -->{% endblock %} - Paws Rescue Center </title>
         <style>
     body , html{
@@ -18,8 +24,8 @@
     }
     
     body { 
-            height: auto;
-            padding-top: 98px;
+            height: 100vh;
+            padding-top: 95px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -33,32 +39,27 @@
 </head>
 
   <body>
-      {% block navbar %}
-      <div id="navbar">
-       <a id="logo" >
-          <img  src="https://pawshumane.org/wp-content/uploads/2018/03/PawsLogo2ColorNoTagPMS633-1.png"  style="max-height: 60px;" alt="logo" >
-       </a>
-        <div id="navbar-right">  
-          <a class="active" href="{{url_for('home')}}">Home</a>
-          <a href="{{url_for('login')}}">Log in</a>
-          <a href="{{url_for('contact')}}">Contact</a>
-          <a href="{{url_for('about')}}">About</a>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img id="img" src="https://pawshumane.org/wp-content/uploads/2018/03/PawsLogo2ColorNoTagPMS633-1.png"  style="max-height: 60px;" alt="logo" >
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{{url_for('home')}}">home
+              <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link"  href="{{url_for('login')}}">Log in</a>
+            <a class="nav-item nav-link" href="{{url_for('contact')}}">Contact</a>
+            <a class="nav-item nav-link "  href="{{url_for('about')}}">About</a>
         </div>
-      </div>
-      {% endblock %}
-      
-          {% block content %}
-            <!-- Placeholder for Page Content -->
-          {% endblock %}
+        </div>
+      </nav>
+      {% block content %} 
+      <!-- Placeholder for Other Imports -->
+       {% endblock %}
 
-     {% block footer %}
-      <div>
-        <footer> 
-            <p> Copyright © 2020 All Rights Reserved </p>
-        </footer>
-      </div>
-      {% endblock %}
-
-      
-    </body>
+  </body>
 </html>
