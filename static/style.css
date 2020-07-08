@@ -2,25 +2,25 @@
 .container {
   display: flex;
   flex-flow: row wrap;
-justify-content: center;
-align-items: stretch;
-height: 100%;
-background-color: white;
+  justify-content: center;
+  align-items: stretch;
+  height: 100%;
+  background-color: white;
 }
 
 * {
  box-sizing: border-box;
 }
 .card {
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-width: 200px;
-background-color: #8cacea;
-margin: 8px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   width: 200px;
+   background-color: #8cacea;
+   margin: 8px;
 
 }
 .card-body{
-display:flex;
-flex-flow: column wrap;
+   display:flex;
+   flex-flow: column wrap;
 
 }
 
