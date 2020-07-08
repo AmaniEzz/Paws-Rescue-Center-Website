@@ -1,97 +1,96 @@
 
-
 .container {
   display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
+  flex-flow: row wrap;
+justify-content: center;
+align-items: stretch;
+height: 100%;
+background-color: white;
 }
 
 * {
-   box-sizing: border-box;
+ box-sizing: border-box;
 }
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 0;
-  margin: 0 auto;
-  width: 24%;
-  margin-bottom: 25px;
-  overflow: hidden;
-  position: relative;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+width: 200px;
+background-color: #8cacea;
+margin: 8px;
+
+}
+.card-body{
+display:flex;
+flex-flow: column wrap;
+
 }
 
-.card-body {
-  display: flex;
-  flex-direction: column;
-}
+
 .about-section {
-  margin: 0;
-  padding: 50px;
-  text-align: center;
-  margin: 0 0;
-  background-color: #474e5d;
-  color: white;
+margin: 0;
+padding: 50px;
+text-align: center;
+margin: 0 0;
+background-color: #474e5d;
+color: white;
 }
- 
+
 /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
 @media screen and (max-width: 800px) {
-  
-  .card {
-    width: 45%;
-    height:23.7%;
-    margin-top: 0;
-  }
 
-  div.card-body{
-   font-size: 15px;
-    width: 100%;
-    height:25%;
-    padding: 10px;
-    margin: 0 0;
+.card {
+  width: 45%;
+  margin: 10px;
+}
 
-  }
+div.card-body{
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
 
-  h5.card-title{
-    font-size:small;
-    margin: 0 0;
+}
 
-  }
-  
-  .sub-title{
-    font-size:15px;
-    margin: 0 0;
+h5.card-title{
+  font-size:small;
+  margin: 0 0;
 
-  }
-  .card-text{
-    margin: 0 0;
-    margin-bottom:10px;
-    font-size: 12px ;
-  }
-  div.container{
-    margin-top: 0px;
-    padding: 5px
-  }
+}
+
+.sub-title{
+  font-size:15px;
+  margin: 0 0;
+
+}
+.card-text{
+  margin: 0 0;
+  margin-bottom:10px;
+  font-size: 12px ;
+}
+div.container{
+  margin-top: 0px;
+  padding: 5px
+}
 
 }
 
 .sub-title {
-  color: grey;
+color: grey;
 }
 
 
 #map {
 
-  height: 400px;  /* The height is 400 pixels */
-  width: 100%;  /* The width is the width of the web page */
- }
- 
+height: 400px;  /* The height is 400 pixels */
+width: 100%;  /* The width is the width of the web page */
+}
+
 footer p {
-  color: rgba(24, 24, 24, 0.555);
-  position: relative; 
-  width: 100%;
-  bottom: 0; 
-  top: 0;
-  border-top: 1px solid #9b9b9b;
-  padding: 10px;
-  text-align: center;
+color: rgba(24, 24, 24, 0.555);
+position: relative; 
+width: 100%;
+bottom: 0; 
+top: 0;
+border-top: 1px solid #9b9b9b;
+padding: 10px;
+text-align: center;
 }
 
