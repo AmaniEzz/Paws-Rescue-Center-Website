@@ -7,10 +7,10 @@ app.config['SECRET_KEY'] = 'dfewfew123213rwdsgert34tgfd1234trgf'
 
 """Information regarding the Pets in the System."""
 pets = [
-    {"id": 1, "name": "Nelly", "age": "5 weeks",        "bio": "I;m Nelly, I love squeaky toys and cuddles."},
+    {"id": 1, "name": "Nelly", "age": "5 weeks",        "bio": "I'm Nelly, I love squeaky toys and cuddles."},
     {"id": 2, "name": "Yuki", "age": "8 months",        "bio": "I'm handsome cat like to dress up in bow ties."},
     {"id": 3, "name": "Basker", "age": "1 year",        "bio": "I love barking. But, I love my friends more."},
-    {"id": 4, "name": "Mr. Furrkins", "age": "5 years", "bio": "Hi! I'm an old grandpa, Probably napping..."}, 
+    {"id": 4, "name": "Mr. Furrkins", "age": "5 years", "bio": "Hi! I'm an old grandpa, Probably napping!"}, 
     {"id": 5, "name": "Aze", "age": "1 year",           "bio": "I'm a quite cat, i love treats."},
     {"id": 6, "name": "suna", "age": "2 month",         "bio": "I feel so lucky to be rescued."},
     {"id": 5, "name": "Aze", "age": "1 year",           "bio": "I'm a quite cat, i love treats."},
