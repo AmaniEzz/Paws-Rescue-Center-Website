@@ -37,6 +37,7 @@
   .card {
     width: 45%;
     height:23.7%;
+    margin-top: 0;
   }
 
   div.card-body{
