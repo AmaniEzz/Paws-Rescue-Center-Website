@@ -33,13 +33,7 @@
  
 /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
 @media screen and (max-width: 800px) {
-  body { 
-    height: 400vh;
-    padding-top: 93px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
- }
+  
   .card {
     width: 45%;
     height:23.7%;
