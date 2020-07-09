@@ -38,7 +38,7 @@ div.card-body{
 }
 
 /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 799px) {
 
 .card {
   width: 45%;
