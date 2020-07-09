@@ -34,7 +34,9 @@
             flex-direction: column;
             justify-content: space-between;
          }
-       
+    footer{
+        margin-top: 10%;
+    }
   </style>
   
   {% block head %} 
@@ -43,6 +45,7 @@
 </head>
 
   <body>
+
       <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <img id="img" src="https://pawshumane.org/wp-content/uploads/2018/03/PawsLogo2ColorNoTagPMS633-1.png"  style="max-height: 60px;" alt="logo" >
@@ -55,22 +58,29 @@
           <div class="navbar-nav">
             <a class="nav-item nav-link active" href="{{url_for('home')}}">home
               <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link"  href="{{url_for('login')}}">Log in</a>
             <a class="nav-item nav-link" href="{{url_for('contact')}}">Contact</a>
             <a class="nav-item nav-link "  href="{{url_for('about')}}">About</a>
+            {% if 'user' in session %}
+            <a class="nav-item nav-link"  href="{{url_for('logout')}}">Log out</a>
+            {% else %}
+            <a class="nav-item nav-link"  href="{{url_for('login')}}">Log in</a>
+            <a class="nav-item nav-link"  href="{{url_for('signup')}}">sign up</a>
+            {% endif %}
+
         </div>
         </div>
       </nav>
 
+
       {% block content %} 
       <!-- Placeholder for Other Imports -->
-       {% endblock %}
+      {% endblock %}
        
-            {% block footer %}
-          <footer> 
-              <p> Copyright © 2020 All Rights Reserved </p>
-          </footer>
-        {% endblock %}
+      {% block footer %}
+        <footer> 
+            <p> Copyright © 2020 All Rights Reserved </p>
+        </footer>
+      {% endblock %}
   </body>
 </html>
 

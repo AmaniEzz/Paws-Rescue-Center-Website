@@ -1,0 +1,90 @@
+{% extends "base_layout.html" %}
+
+
+<!-- Replacement for Title -->
+{% block title %}
+     Login 
+{% endblock %}
+
+{% block head %} 
+<style>
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .card{
+    width: 100%;
+    margin: 0 0;  
+    background: url("https://image.freepik.com/free-vector/youth-day-with-people-hugging-together_23-2148582326.jpg") 90% 60%/ 350px no-repeat;
+}
+    div.card-body{
+        background-color:rgb(196, 229, 229);
+        width: 50%; 
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+{% endblock %}
+
+<!-- Replacement for Content -->
+{% block content %}
+   {% if message %}
+      {{ message }}
+   {% endif %}
+
+{% if form %}
+
+<div class="container">
+    <div class="card">
+         <div class="card-body">
+            <span class="login-form-title " style="font-weight: bold; font-size: 30px;">
+                Sign up
+             </span>
+             <form action="{{url_for('signup')}}" method="POST" class="login-form ">
+               <!-- Full Name Field -->
+               {{ form.username.label }}: <br>
+               {{ form.username }} 
+            <br>
+               <!-- Email Field -->
+               {{ form.email.label }}: <br>
+               {{ form.email }} 
+               {% if form.email.errors %}
+                   {% for error in form.email.errors %}
+                       <b style="color:tomato;"> {{ error }} </b> 
+                    <br>
+                   {% endfor %}
+               {% endif %}
+           <br>
+
+
+               <!-- Password Field -->
+               {{ form.password.label }}: <br>
+               {{ form.password }}
+            <br>
+
+
+               <!-- Confirm Password Field -->
+               {{ form.confirm.label }}: <br>
+               {{ form.confirm }}
+               {% if form.confirm.errors %}
+                    {% for error in form.confirm.errors %}
+                        <b style="color:tomato;"> {{ error }} </b> 
+                    <br>
+                    {% endfor %}
+               {% endif %}
+
+                <!-- Hidden CSRF Token Field -->
+                {{ form.csrf_token }}
+            <br>
+                <!-- Submit Field -->
+                {{ form.submit }}
+
+            </div>  
+        </form>
+    </div>
+    </div>
+</div>
+{% endif %}
+ 
+{% endblock %}

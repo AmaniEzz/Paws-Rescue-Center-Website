@@ -37,18 +37,35 @@ Login
              <form action="{{url_for('login')}}" method="POST" class="login-form ">
                     <label class="wrap-input icon-input" data-validate = "Enter username">
                         {{ form.email(class_='input', placeholder="User name" ) }}
+                        {% if form.email.errors %}
+                        {% for error in form.email.errors %}
+                           <b style="color:tomato;"> {{ error }} </b> 
+                           <br>
+                        {% endfor %}
+                        {% endif %}
                         <span class="focus-input" data-placeholder="&#xe82a;"></span>
                     </label>
    
                     <label class="wrap-input icon-input" data-validate="Enter password">
                         {{ form.password(class_='input', placeholder="password" ) }}
+                        {% if form.password.errors %}
+                        {% for error in form.password.errors %}
+                           <b style="color:tomato;"> {{ error }} </b> 
+                           <br>
+                        {% endfor %}
+                        {% endif %}
                         <span class="focus-input" data-placeholder="&#xe80f;"></span>
                     </label>
                 
                     <div class="container-login-form-btn ">
                         {{ form.csrf_token }}
                         {{ form.submit(class_=' login-form-btn') }}
-                    </div>   
+                    </div>  
+
+
+                    {% if msg %}
+                     <p>{{ msg }}</p>
+                    {% endif %}
              </form>
          </div>
      </div>
