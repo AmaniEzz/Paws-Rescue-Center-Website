@@ -1,10 +1,5 @@
 
-html body{
-  background: #1e96b833;
-  background: -webkit-linear-gradient(left, #1e96b8f2, #40a4bbf2, #a3cfdcd1);
-  background: linear-gradient(right, #1e96b8f2, #40a4bbf2, #a3cfdcd1);
-  
-}
+
 
 .limiter {
   width: 100%;
