@@ -3,15 +3,26 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='Linearicons-Free-v1.0.0/icon-font.min.css')}}" >
         <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
         <link rel="stylesheet" href="{{url_for('static', filename='loginStyle.css')}}" />
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script 
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+
+        <script 
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+        </script>
         
-        <title>{% block title %}<!-- Placeholder for Title -->{% endblock %} - Paws Rescue Center </title>
-        <style>
+        <title>
+          {% block title %}<!-- Placeholder for Title -->{% endblock %} - Paws Rescue Center 
+        </title>
+  <style> 
     body , html{
             font-family: Arial, Helvetica, sans-serif;
             margin:0;
@@ -29,9 +40,7 @@
             flex-direction: column;
             justify-content: space-between;
          }
-    footer{
-        margin-top: 10%;
-    }
+   
   </style>
   
   {% block head %} 
