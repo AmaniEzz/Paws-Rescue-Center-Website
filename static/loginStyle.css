@@ -5,25 +5,32 @@
   display: flex;
   flex-wrap: wrap;
   justify-content:center;
-  padding:100px;
+  padding:80px;
+
+  background: url("https://image.freepik.com/free-vector/youth-day-with-people-hugging-together_23-2148582326.jpg") 80% 50% no-repeat;
+}
+
+.login-container{
+  width: 100%;
+  margin: 0 0;  
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.23);
+  justify-content: center;
+  border-radius: 5px;
+  background-color:#ffffff;
+  z-index: -1;  
+
+
+  }
+.login-body{
+  background-color:rgb(255, 255, 255);
+  width: 40%; 
+  padding: 55px 55px 40px 55px;  
+  display: flex;
+  justify-content: center;
+  border-radius:12px 0 0 12px;
 
 
 }
-
-div.login-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content:center;
-  width: fit-content;
-  overflow: hidden;
-  padding: 55px 55px 37px 55px;  
-  width: 70%;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.23);
-  background: #ffffffd1;
-  border-radius: 15px;
-  z-index: auto;
-
-  }
 
  /* [ Log in Form ]*/
 
@@ -115,7 +122,7 @@ box-sizing: border-box;
 }
 
 
-input:focus::-webkit-input-placeholder { color:transparent;}
+input:focus::-webkit-input-placeholder { color:#000000c2;}
 input:focus:-moz-placeholder { color:transparent; }
 input:focus::-moz-placeholder { color:transparent; }
 input:focus:-ms-input-placeholder { color:transparent; }
@@ -162,7 +169,7 @@ input:-ms-input-placeholder { color: rgba(60, 57, 57, 0.86);}
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 15px;
+  padding: 0 25px;
   min-width: 50%;
   height: 40px;
   border-radius: 20px;
@@ -190,7 +197,7 @@ input:-ms-input-placeholder { color: rgba(60, 57, 57, 0.86);}
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 930px) {
 
 
 *,
@@ -208,7 +215,7 @@ div.container-login-form-btn{
 }
 .login-form-btn {
   font-size: 15px;
-  min-width: 55%;
+  min-width: 90%;
   height: 35px;
   border-radius: 20px;
 }
@@ -218,17 +225,25 @@ div.limiter {
   width: 100%;
   padding:0 0;
   margin-top:30px;
-  padding:50px;
+  padding:30px;
+  background:none;
 
 }
 
 div.login-container{
-  padding: 15px 15px 25px 15px;  
   width: 100%;
   }
+ 
+div.login-body{
+    width: 100%;
+    border-radius:12px;
+ 
+}
 
 .wrap-input {
-  padding: 30px 0;
+  
+  padding: 20px 0;
+
 }
 .focus-input {
   position: absolute;
@@ -256,7 +271,7 @@ div.login-container{
 }
 
 .focus-input::after {
-  font-size: 22px;
+  font-size: 20px;
   content: attr(data-placeholder);
   display: block;
   width: 100%;
