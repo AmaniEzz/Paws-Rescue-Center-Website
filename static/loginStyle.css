@@ -1,6 +1,4 @@
 
-
-
 .limiter {
   width: 100%;
   margin: 0 auto;
@@ -20,8 +18,9 @@ div.login-container{
   overflow: hidden;
   padding: 55px 55px 37px 55px;  
   width: 70%;
-  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2);
-  background: #ffffff4d;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.23);
+  background: #ffffffd1;
+  border-radius: 15px;
   z-index: auto;
 
   }
@@ -55,7 +54,7 @@ box-sizing: border-box;
 .wrap-input {
   font-family:Linearicons-Free;
   width: 100%;
-  border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1.5px solid rgba(200, 197, 197, 0.55);
   padding: 30px 0;
   justify-content:center;
 
@@ -104,7 +103,7 @@ box-sizing: border-box;
 
 .focus-input::after {
   font-size: 22px;
-  color: #ffffff;
+  color: #1c1a1a;
   content: attr(data-placeholder);
   display: block;
   width: 100%;
@@ -122,10 +121,10 @@ input:focus::-moz-placeholder { color:transparent; }
 input:focus:-ms-input-placeholder { color:transparent; }
 
 
-input::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.86);}
-input:-moz-placeholder { color: rgba(255, 255, 255, 0.86);}
-input::-moz-placeholder {color: rgba(255, 255, 255, 0.86);}
-input:-ms-input-placeholder { color: rgba(255, 255, 255, 0.86);}
+input::-webkit-input-placeholder { color: rgba(60, 57, 57, 0.86);}
+input:-moz-placeholder { color: rgba(60, 57, 57, 0.86);}
+input::-moz-placeholder {color: rgba(60, 57, 57, 0.86);}
+input:-ms-input-placeholder { color: rgba(60, 57, 57, 0.86);}
 
 .input:focus {
   padding-left: 60px;
@@ -209,7 +208,7 @@ div.container-login-form-btn{
 }
 .login-form-btn {
   font-size: 15px;
-  min-width: 50%;
+  min-width: 55%;
   height: 35px;
   border-radius: 20px;
 }
@@ -258,7 +257,6 @@ div.login-container{
 
 .focus-input::after {
   font-size: 22px;
-  color: #ffffff;
   content: attr(data-placeholder);
   display: block;
   width: 100%;
