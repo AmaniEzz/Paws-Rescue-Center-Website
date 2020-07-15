@@ -8,4 +8,4 @@ MarkupSafe==1.1.1
 Werkzeug==0.16.1
 WTForms==2.3.1
 email_validator
-SQLite3==3.32.3
+SQLite3==3.32.3 7ebdfa80be8e8e73324b8d66b3460222eb74c7e9dfd655b48d6ca7e1933calt2
