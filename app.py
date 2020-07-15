@@ -127,15 +127,11 @@ def pet_details(pet_ID):
     if pet is not None:
         if form.validate_on_submit():
             return render_template("details.html", msg= "Successfully submited adoptation request")
-        else:
+    else:
            abort(404, description="No pet found with this ID")
     return render_template("details.html", form = form,  pet = pet, pet_ID=pet_ID)
 
 
-@app.route("/submited/<int:pet_ID>", methods=[ "POST"])
-def pet_adopted(pet_ID):
-       form = AdoptationForm()
-       pet = Pet.query.get(pet_ID)
           
 if __name__ == "__main__":
     app.run(debug=True)

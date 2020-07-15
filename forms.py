@@ -23,5 +23,5 @@ class SignupForm(FlaskForm):
 class AdoptationForm(FlaskForm):
     Fullname = StringField('Full name', validators=[InputRequired(), my_length_check])
     Adresse = StringField('Adresse', validators=[InputRequired()])
-    reasone = PasswordField('Why do you want to adopt this pet?', validators = [InputRequired()])
+    reasone = StringField('Why do you want to adopt this pet?', validators = [InputRequired()])
     submit = SubmitField('Submit ')
