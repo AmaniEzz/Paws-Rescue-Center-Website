@@ -18,12 +18,12 @@ Home
   <div class="container">
     {% for pet in pets %}
     <div class="card">
-      <img src="{{url_for('static', filename = pet["id"]|string+".jpg")}}" class="card-img-top" alt="Jane">
+      <img src="{{url_for('static', filename = pet.id|string+".jpg")}}" class="card-img-top" alt="Jane">
       <div class="card-body">
-        <h5 class="card-title"> {{ pet["name"] }} </h5>
-        <p class="sub-title">{{ pet["age"] }}</p>
-        <p class="card-text"> {{ pet["bio"] }} </p>
-        <a id="adopt-btn" href="{{url_for('pet_details', pet_ID = pet['id'])}}"class=" login-form-btn" style="color: white; width: 50%;">
+        <h5 class="card-title"> {{ pet.name }} </h5>
+        <p class="sub-title">{{ pet.age }}</p>
+        <p class="card-text"> {{ pet.bio }} </p>
+        <a id="adopt-btn" href="{{url_for('pet_details', pet_ID = pet.id)}}"class=" login-form-btn" style="color: white; width: 50%;">
             Adopt me
         </a>
       </div>

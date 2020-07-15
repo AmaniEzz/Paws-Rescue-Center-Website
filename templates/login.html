@@ -30,7 +30,7 @@ Login
                         {{ form.email(class_='input', placeholder="User name" ) }}
                         {% if form.email.errors %}
                         {% for error in form.email.errors %}
-                           <b style="color:tomato;"> {{ error }} </b> 
+                           <b style="color:cadetblue;"> {{ error }} </b> 
                            <br>
                         {% endfor %}
                         {% endif %}
@@ -41,7 +41,7 @@ Login
                         {{ form.password(class_='input', placeholder="password" ) }}
                         {% if form.password.errors %}
                         {% for error in form.password.errors %}
-                           <b style="color:tomato;"> {{ error }} </b> 
+                           <b style="color:cadetblue;"> {{ error }} </b> 
                            <br>
                         {% endfor %}
                         {% endif %}

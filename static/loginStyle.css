@@ -6,7 +6,6 @@
   flex-wrap: wrap;
   justify-content:center;
   padding:80px;
-
   background: url("https://image.freepik.com/free-vector/youth-day-with-people-hugging-together_23-2148582326.jpg") 80% 50% no-repeat;
 }
 
@@ -17,12 +16,12 @@
   justify-content: center;
   border-radius: 5px;
   background-color:#ffffff;
-  z-index: -1;  
 
 
   }
+
 .login-body{
-  background-color:rgb(255, 255, 255);
+  background-color:rgba(255, 255, 255, 0);
   width: 40%; 
   padding: 55px 55px 40px 55px;  
   display: flex;
@@ -37,6 +36,8 @@
  .login-form {
   width: 100%;
   height: 0 auto
+
+
 }
 
 * {
@@ -170,7 +171,7 @@ input:-ms-input-placeholder { color: rgba(60, 57, 57, 0.86);}
   justify-content: center;
   align-items: center;
   padding: 0 25px;
-  min-width: 50%;
+  min-width: 80%;
   height: 40px;
   border-radius: 20px;
   background: -webkit-linear-gradient(left, #136075, #3b8da0, #77a9b7);
@@ -214,9 +215,10 @@ div.container-login-form-btn{
  
 }
 .login-form-btn {
-  font-size: 15px;
-  min-width: 90%;
-  height: 35px;
+  padding: 0 5px;
+  font-size: 10px;
+  min-width: 50%;
+  height: 30px;
   border-radius: 20px;
 }
 

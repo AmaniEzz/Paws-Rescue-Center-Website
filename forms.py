@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import InputRequired, Email, EqualTo , Length, ValidationError
+from wtforms.validators import InputRequired, Email,EqualTo , Length, ValidationError
 
 
 def my_length_check(form, field):
@@ -19,3 +19,9 @@ class SignupForm(FlaskForm):
     password = PasswordField('Password', validators = [InputRequired()])
     confirm  = PasswordField('Confirm Password', validators = [InputRequired(), EqualTo('password', message='Passwords must match')])
     submit = SubmitField('Sign Up')
+
+class AdoptationForm(FlaskForm):
+    Fullname = StringField('Full name', validators=[InputRequired(), my_length_check])
+    Adresse = StringField('Adresse', validators=[InputRequired()])
+    reasone = PasswordField('Why do you want to adopt this pet?', validators = [InputRequired()])
+    submit = SubmitField('Submit ')

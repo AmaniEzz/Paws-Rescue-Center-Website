@@ -2,19 +2,56 @@
 
 <!-- Replacement for Title -->
 {% block title %}
-Details 
+ Details 
 {% endblock %}
 
-<!-- Replacement for Content -->
 {% block content %}
+   {% if msg %}
+      {{ msg }}
+   {% endif %}
+
+{% if form %}
+
+<!-- Replacement for Content -->
 <div class="container">
-      <div class="card" style="width: 50%;" >
-        <img src= "{{url_for('static', filename = pet["id"]|string+".jpg")}}" alt="Jane" style="width:100%">
-        <article>
-            <h2>{{ pet["name"] }}</h2>
-            <p class="title">{{ pet["age"] }}</p>
-            <p> {{ pet["bio"] }}</p>
-        </article>
-      </div>
+  <div style="float:left; ">
+    <img src= "{{url_for('static', filename = pet.id|string+".jpg")}}" height="550" ><br>
+</div> 
+<div style="float:left; margin:10px;">
+    <h1 class="title">{{ pet.name }}</h1>
+    <p><b>Age: &nbsp;</b> {{pet.age}}</p>
+    <p><b>Bio: &nbsp;</b> {{pet.bio}}</p>
+    <hr> 
+    
+    <h2> Edit Pet </h2>
+    <!-- Error Message  -->
+    {% if message %}
+        <span style="background-color:tomato">
+        {{ message }}
+        <span>
+        <br>
+    {% endif %}
+    <!--  -->
+    <!-- Form for Editing the Pet -->
+    <form action="{{url_for('pet_details', pet_ID = pet.id)}}" method="POST" style="padding:5px;">
+        {{ form.Fullname.label }}: <br>
+        {{ form.Fullname }} 
+        <br>
+        {{ form.Adresse.label }}: <br>
+        {{ form.Adresse }} 
+        <br>
+        {{ form.reasone.label }}: <br>
+        {{ form.reasone }} 
+        <br>
+        <div class="container-login-form-btn ">
+          {{ form.csrf_token }}
+          {{ form.submit(class_=' login-form-btn') }}
+        </div>  
+
+    </form>
+    <!--  -->
 </div>
+</div>
+{% endif %}
+
 {% endblock %}
