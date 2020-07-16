@@ -13,16 +13,36 @@
         flex-wrap: wrap;
     }
     .card{
-    width: 100%;
-    margin: 0 0;  
-    background: url("https://image.freepik.com/free-vector/youth-day-with-people-hugging-together_23-2148582326.jpg") 90% 60%/ 350px no-repeat;
+        width: 100%;
+        margin: 0 0;  
+        background: url("https://image.freepik.com/free-vector/youth-day-with-people-hugging-together_23-2148582326.jpg") 90% 60%/ 350px no-repeat;
 }
     div.card-body{
-        background-color:rgb(196, 229, 229);
+        background-color:rgb(218, 246, 247);
         width: 50%; 
-        padding: 20px;
+        padding: 10px;
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         flex-direction: column;
+    }
+    @media screen and (max-width: 766px) {
+    
+ 
+    div.card-body{
+        width: 100%; 
+        padding-bottom: 15px;
+    
+    }
+    form.login-form{
+        width: 100%; 
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+
+    }
+    input{
+        width: 70%;
     }
 </style>
 {% endblock %}
