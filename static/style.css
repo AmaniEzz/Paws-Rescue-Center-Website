@@ -36,7 +36,7 @@ div.card-body{
    background-color:rgba(36, 134, 162, 0.83);
    color: white;
 }
-@media screen and (max-width: 350px ) {
+@media screen and (max-width: 374px ) {
 
 .card {
   width: 100%;
@@ -44,7 +44,7 @@ div.card-body{
 
 }
 /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
-@media screen and (max-width: 990px and min-width: 350px) {
+@media screen and (max-width: 990px) and (min-width: 374px) {
 
 .card {
   width: 45%;
