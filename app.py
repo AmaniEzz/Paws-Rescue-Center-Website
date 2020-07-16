@@ -38,7 +38,7 @@ yuki   = Pet(name = "Yuki",   age = "8 months", bio = "I'm handsome cat like to 
 basker = Pet(name = "Basker", age = "1 year",   bio = "I love barking. But, I love my friends more.",adopted=False)
 mrfurrkins = Pet(name = "Mr. Furrkins", age = "5 years", bio = "Hi! I'm an old grandpa, Probably napping!",adopted=False)
 Aze    = Pet(name = "Aze",   age = "1 year",  bio = "I'm a quite cat, i love treats.",adopted=False)
-suna   = Pet(name = "suna",  age = "2 month", bio = "Hi! I'm an old grandpa, Probably napping!",adopted=False)
+suna   = Pet(name = "suna",  age = "2 month", bio = "........................",adopted=False)
 Natcha = Pet(name = "Natcha",age = "4 year",  bio = "........................",adopted=False)
 Buny   = Pet(name = "Buny",  age = "3 month", bio = "........................",adopted=False)
 
@@ -52,6 +52,24 @@ db.session.add(suna)
 db.session.add(Natcha)
 db.session.add(Buny)
 
+
+# Commit changes in the session
+try:
+    db.session.commit()
+except Exception as e: 
+    db.session.rollback()
+finally:
+    db.session.close()
+
+# Update some pets info
+suna = Pet.query.filter(Pet.name=="suna").first()
+suna.bio ="Hi! I feel so lucky to be rescued!"
+
+Natcha = Pet.query.filter(Pet.name=="Natcha").first()
+Natcha.bio ="I'm a loyal dog who loves treats."
+
+Buny = Pet.query.filter(Pet.name=="Buny").first()
+Buny.bio ="I love carrots, But, I love my friends more.."
 
 # Commit changes in the session
 try:
