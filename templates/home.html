@@ -18,7 +18,7 @@ Home
   <div class="container">
     {% for pet in pets %}
     <div class="card">
-      <img src="{{url_for('static', filename = pet.id|string+".jpg")}}" class="card-img-top" alt="Jane">
+      <img src="{{url_for('static', filename = pet.id|string+".jpg")}}" class="card-img-top" alt="pet">
       <div class="card-body">
         <h5 class="card-title"> {{ pet.name }} </h5>
         <p class="sub-title">{{ pet.age }}</p>
