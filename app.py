@@ -1,94 +1,35 @@
-from flask import Flask, render_template, abort,session,redirect,url_for
+from flask import Flask, render_template, abort,session,redirect,url_for, jsonify
 from forms import LoginForm, SignupForm, AdoptationForm
 from flask_sqlalchemy import SQLAlchemy
+from flask import make_response
+from flask import request
+from flask_migrate import Migrate
+from flask_swagger import swagger
+from flask_cors import CORS
+import os
+from admin import setup_admin
+from models import db, User, Pet, PetSchema, UserSchema
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'dfewfew123213rwdsgert34tgfd1234trgf'
+app.url_map.strict_slashes = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Paws__Center.db'
-db = SQLAlchemy(app)
+
+MIGRATE = Migrate(app, db)
+db.init_app(app)
+CORS(app)
+setup_admin(app)
 
 
-"""Model for Pets."""
-class Pet(db.Model):
-    id   = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, unique=True, nullable=False)
-    age  = db.Column(db.String, nullable=False)
-    bio  = db.Column(db.String, nullable=False)
-    adopted  = db.Column(db.Boolean, nullable=False)
-    #create a forgien key from Users class
-    adopted_by = db.Column(db.String, db.ForeignKey('user.id'))
-
-"""Model for Users."""
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String, nullable=False)
-    email = db.Column(db.String, unique=True, nullable=False)
-    password = db.Column(db.String, nullable=False)
-    #set one-to-many relationship between users and pets
-    #This back-reference will enable us to point to a row in User by using pet.user.
-    pets = db.relationship('Pet', backref = 'user')
-
-db.create_all()
-
-
-
-# Create all pets
-nelly  = Pet(name = "Nelly",  age = "5 weeks",  bio = "I'm Nelly, I love squeaky toys and cuddles.", adopted=False)
-yuki   = Pet(name = "Yuki",   age = "8 months", bio = "I'm handsome cat like to dress up in bow ties",adopted=False)
-basker = Pet(name = "Basker", age = "1 year",   bio = "I love barking. But, I love my friends more.",adopted=False)
-mrfurrkins = Pet(name = "Mr. Furrkins", age = "5 years", bio = "Hi! I'm an old grandpa, Probably napping!",adopted=False)
-Aze    = Pet(name = "Aze",   age = "1 year",  bio = "I'm a quite cat, i love treats.",adopted=False)
-suna   = Pet(name = "suna",  age = "2 month", bio = "........................",adopted=False)
-Natcha = Pet(name = "Natcha",age = "4 year",  bio = "........................",adopted=False)
-Buny   = Pet(name = "Buny",  age = "3 month", bio = "........................",adopted=False)
-
-# Add all pets to the session
-db.session.add(nelly)
-db.session.add(yuki)
-db.session.add(basker)
-db.session.add(mrfurrkins)
-db.session.add(Aze)
-db.session.add(suna)
-db.session.add(Natcha)
-db.session.add(Buny)
-
-
-# Commit changes in the session
-try:
-    db.session.commit()
-except Exception as e: 
-    db.session.rollback()
-finally:
-    db.session.close()
-
-# Update some pets info
-suna = Pet.query.filter(Pet.name=="suna").first()
-suna.bio ="Hi! I feel so lucky to be rescued!"
-
-Natcha = Pet.query.filter(Pet.name=="Natcha").first()
-Natcha.bio ="I'm a loyal dog who loves treats."
-
-Buny = Pet.query.filter(Pet.name=="Buny").first()
-Buny.bio ="I love carrots, But, I love my friends more.."
-
-# Commit changes in the session
-try:
-    db.session.commit()
-except Exception as e: 
-    db.session.rollback()
-finally:
-    db.session.close()
-
+##################################################################################################################
+############################################## Application routes ################################################
 
 @app.route("/")
 def home():
     return render_template("home.html", pets= Pet.query.filter(Pet.adopted==False))
 
-
 @app.route("/about")
 def about():
     return render_template("about.html")
-
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -149,7 +90,116 @@ def pet_details(pet_ID):
            abort(404, description="No pet found with this ID")
     return render_template("details.html", form = form,  pet = pet, pet_ID=pet_ID)
 
-
           
+############################################################################
+############################ API Routes ####################################
+
+
+@app.route("/pets/api/v1.0/pets", methods=['GET'])
+def get_all():
+    All_Pets =  Pet.query.all()
+    
+    # Serialize all data for the response
+    Pet_schema = PetSchema(many=True)
+    return jsonify(Pet_schema.dump(All_Pets))
+
+
+@app.route('/pets/api/v1.0/details/<int:pet_ID>', methods=['GET'])
+def get_a_pet(pet_ID):
+    pet = Pet.query.get(pet_ID)
+
+    if pet is not None:
+        Pet_schema = PetSchema()
+        return Pet_schema.dump(pet)
+    else:
+        abort(404, 'Pet not found for Id: {pet_ID}'.format(pet_ID=pet_ID))
+
+
+@app.route('/pets/api/v1.0/create', methods=['POST'])
+def Newpet():
+       name = request.json.get('name', '')
+       age = request.json.get('age', '')
+       bio = request.json.get('bio', '')
+       
+       new_pet = Pet(name = name, age=age, bio=bio)
+       
+       db.session.add(new_pet)
+       db.session.commit()
+
+       Pet_schema = PetSchema()
+       return Pet_schema.dump(new_pet)
+
+################################### [PATCH] updating pets info ###########################################
+
+@app.route('/pets/api/v1.0/update_all/<int:pet_ID>/', methods=['PATCH'])
+def update_pet_info(pet_ID):
+    name = request.json.get('name', '')
+    age  = request.get('ages', '')
+    bio  = request.get('bio', '')
+    updated_pet = Pet.query.get(pet_ID)
+
+    updated_pet.name = name
+    updated_pet.age = age
+    updated_pet.bio = bio
+
+    db.session.add(updated_pet)
+    db.session.commit()
+
+    Pet_schema = PetSchema()
+    return Pet_schema.dump(updated_pet)
+
+@app.route('/pets/api/v1.0/update_name/<int:pet_ID>/', methods=['PATCH'])
+def update_pet_name(pet_ID):
+    name = request.json.get('name', '')
+    updated_pet = Pet.query.get(pet_ID)
+
+    updated_pet.name = name
+    db.session.add(updated_pet)
+    db.session.commit()
+
+    Pet_schema = PetSchema()
+    return Pet_schema.dump(updated_pet)
+
+@app.route('/pets/api/v1.0/update_age/<int:pet_ID>/', methods=['PATCH'])
+def update_pet_age(pet_ID):
+    age = request.json.get('age', '')
+    updated_pet = Pet.query.get(pet_ID)
+    updated_pet.age = age
+    db.session.add(updated_pet)
+    db.session.commit()
+
+    Pet_schema = PetSchema()
+    return Pet_schema.dump(updated_pet)
+
+@app.route('/pets/api/v1.0/update_bio/<int:pet_ID>/', methods=['PATCH'])
+def update_pet_bio(pet_ID):
+    bio  = request.get('bio', '')
+    updated_pet = Pet.query.get(pet_ID)
+    updated_pet.bio = bio
+    db.session.add(updated_pet)
+    db.session.commit()
+
+    Pet_schema = PetSchema()
+    return Pet_schema.dump(updated_pet)
+
+########################################################################################################
+
+@app.route('/pets/api/v1.0/delete/<int:pet_ID>/', methods=["DELETE"])
+def delete_pet(pet_ID):
+
+    deleted_pet = Pet.query.get(pet_ID)
+    db.session.delete(deleted_pet)
+    db.session.commit()
+
+    Pet_schema = PetSchema()
+    return Pet_schema.dump(deleted_pet)
+
+
+## Get a much more API friendly error response ## 
+@app.errorhandler(500)
+def error_handler(e):
+    return jsonify({'message': str(e)}), 500 # Always hits this whatever exception is raised
+
+
 if __name__ == "__main__":
     app.run(debug=True)

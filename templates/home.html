@@ -6,18 +6,19 @@ Home
 {% endblock %}
 
 
-
 <!-- Replacement for Content -->
 {% block content %}
  
-<div class="about-section">
-  <h1 style="text-align: center;">Paws Rescue Center 🐾</h1>
-  <p>We are tiny kittens and puppies rescued by the good people at Paws Rescue Center.
-</div> 
+<section class="about-section">
+  <article>
+    <h1 style="text-align: center;">Paws Rescue Center 🐾</h1>
+    <p>We are tiny kittens and puppies rescued by the good people at Paws Rescue Center.</p>
+  </article>
+</section> 
 
-  <div class="container">
+<section class="container">
     {% for pet in pets %}
-    <div class="card">
+    <article class="card">
       <img src="{{url_for('static', filename = pet.id|string+".jpg")}}" class="card-img-top" alt="pet">
       <div class="card-body">
         <h5 class="card-title"> {{ pet.name }} </h5>
@@ -27,8 +28,8 @@ Home
             Adopt me
         </a>
       </div>
-    </div>
+    </article>
      {% endfor %}
-  </div>
+</section>
 
 {% endblock %}
