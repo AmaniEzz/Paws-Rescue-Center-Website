@@ -129,18 +129,31 @@ def Newpet():
        Pet_schema = PetSchema()
        return Pet_schema.dump(new_pet)
 
-################################### [PATCH] updating pets info ###########################################
 
-@app.route('/pets/api/v1.0/update_all/<int:pet_ID>/', methods=['PATCH'])
-def update_pet_info(pet_ID):
-    name = request.json.get('name', '')
-    age  = request.get('ages', '')
-    bio  = request.get('bio', '')
+@app.route('/pets/api/v1.0/update/<int:pet_ID>/<str:field', methods=['PATCH'])
+def update_pet_info(pet_ID, field):
+
     updated_pet = Pet.query.get(pet_ID)
 
-    updated_pet.name = name
-    updated_pet.age = age
-    updated_pet.bio = bio
+    if field == "all":
+        name = request.json.get('name', '')
+        age  = request.get('ages', '')
+        bio  = request.get('bio', '')
+        updated_pet.name = name
+        updated_pet.age = age
+        updated_pet.bio = bio
+
+    elif field == "name":
+        name = request.json.get('name', '')
+        updated_pet.name = name
+
+    elif field == "age":
+        age = request.json.get('age', '')
+        updated_pet.name = age
+
+    elif field == "bio":
+        bio = request.json.get('bio', '')
+        updated_pet.name = bio
 
     db.session.add(updated_pet)
     db.session.commit()
@@ -148,41 +161,6 @@ def update_pet_info(pet_ID):
     Pet_schema = PetSchema()
     return Pet_schema.dump(updated_pet)
 
-@app.route('/pets/api/v1.0/update_name/<int:pet_ID>/', methods=['PATCH'])
-def update_pet_name(pet_ID):
-    name = request.json.get('name', '')
-    updated_pet = Pet.query.get(pet_ID)
-
-    updated_pet.name = name
-    db.session.add(updated_pet)
-    db.session.commit()
-
-    Pet_schema = PetSchema()
-    return Pet_schema.dump(updated_pet)
-
-@app.route('/pets/api/v1.0/update_age/<int:pet_ID>/', methods=['PATCH'])
-def update_pet_age(pet_ID):
-    age = request.json.get('age', '')
-    updated_pet = Pet.query.get(pet_ID)
-    updated_pet.age = age
-    db.session.add(updated_pet)
-    db.session.commit()
-
-    Pet_schema = PetSchema()
-    return Pet_schema.dump(updated_pet)
-
-@app.route('/pets/api/v1.0/update_bio/<int:pet_ID>/', methods=['PATCH'])
-def update_pet_bio(pet_ID):
-    bio  = request.get('bio', '')
-    updated_pet = Pet.query.get(pet_ID)
-    updated_pet.bio = bio
-    db.session.add(updated_pet)
-    db.session.commit()
-
-    Pet_schema = PetSchema()
-    return Pet_schema.dump(updated_pet)
-
-########################################################################################################
 
 @app.route('/pets/api/v1.0/delete/<int:pet_ID>/', methods=["DELETE"])
 def delete_pet(pet_ID):
