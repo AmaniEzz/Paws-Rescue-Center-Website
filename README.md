@@ -25,9 +25,12 @@ However, this project is not completed yet.
 | `Flask-migrate` | An extension that handles SQLAlchemy database migrations for Flask applications using Alembic
 | `jsonify` | Creates a Response with the JSON representation of the given arguments with an application/json mimetype.
 
- 
+
+
+### Sqlite3 database 
+
 ### HTML/CSS
 
 ### Heroku deployment
 
-### Sqlite3 database
+

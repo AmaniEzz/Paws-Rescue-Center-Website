@@ -3,7 +3,7 @@ from flask_migrate import Migrate
 from admin import setup_admin
 from models import db
 from API_views import pet_api
-from Home import site
+from website_views import site
 
 app = Flask(__name__)
 
