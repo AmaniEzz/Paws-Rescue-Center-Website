@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_migrate import Migrate
-from flask_swagger import swagger
 from admin import setup_admin
 from models import db
 from API_views import pet_api
