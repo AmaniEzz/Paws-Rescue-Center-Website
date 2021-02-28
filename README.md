@@ -1,21 +1,30 @@
 
-# [Paws-Rescue-Centre-Website](https://guarded-ridge-45162.herokuapp.com/)
+# [Paws Rescue Centre Website](https://guarded-ridge-45162.herokuapp.com/)
 
 
 ```
 This is a my very first web project using Flask web framework, to test what I have learnt so far.
-I have always loved animals, so the first idea that came to mind is a pet rescue centre. However, this project is not completed yet.
+I have always loved animals, so the first idea that came to mind is a pet rescue centre.
+However, this project is not completed yet.
 ```
 ## Technologis used in this website:
 
 ### Flask (Python)
-- libraries used:
+
+#### libraries used:
  
 
 | Lib                  | Description
 | ------------------------- |:-------------------
-| `SQLAlchemy` | SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL. |
-|
+| `SQLAlchemy` | SQLAlchemy is the Python SQL toolkit and ORM that gives developers the full power and flexibility of SQL. |
+| `WTForms` | WTForms is a flexible forms validation and rendering library for Python web development.|
+| `Flask-WTF` | Simple integration of Flask and WTForms, including CSRF, file upload, and reCAPTCHA.
+| `Jinja2` | Jinja is a modern and designer-friendly templating language for Python. |
+| `Flask-Marshmallow` | Integration of Flask and marshmallow (an object serialization/deserialization library)
+| `Flask-admin` | An admin site that lets you manage your web service’s data through a user-friendly interface.
+| `Flask-migrate` | An extension that handles SQLAlchemy database migrations for Flask applications using Alembic
+| `jsonify` | Creates a Response with the JSON representation of the given arguments with an application/json mimetype.
+
  
 ### HTML/CSS
 
