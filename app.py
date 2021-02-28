@@ -130,7 +130,7 @@ def Newpet():
        return Pet_schema.dump(new_pet)
 
 
-@app.route('/pets/api/v1.0/update/<int:pet_ID>/<str:field', methods=['PATCH'])
+@app.route('/pets/api/v1.0/update/<int:pet_ID>/<string:field>', methods=['PATCH'])
 def update_pet_info(pet_ID, field):
 
     updated_pet = Pet.query.get(pet_ID)
@@ -149,11 +149,11 @@ def update_pet_info(pet_ID, field):
 
     elif field == "age":
         age = request.json.get('age', '')
-        updated_pet.name = age
+        updated_pet.age = age
 
     elif field == "bio":
         bio = request.json.get('bio', '')
-        updated_pet.name = bio
+        updated_pet.bio = bio
 
     db.session.add(updated_pet)
     db.session.commit()
