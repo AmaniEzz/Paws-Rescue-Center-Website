@@ -60,15 +60,15 @@
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="{{url_for('home')}}">home
+            <a class="nav-item nav-link active" href="{{url_for('site.home')}}">home
               <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="{{url_for('contact')}}">Contact</a>
-            <a class="nav-item nav-link "  href="{{url_for('about')}}">About</a>
+            <a class="nav-item nav-link" href="{{url_for('site.contact')}}">Contact</a>
+            <a class="nav-item nav-link "  href="{{url_for('site.about')}}">About</a>
             {% if 'user' in session %}
-            <a class="nav-item nav-link"  href="{{url_for('logout')}}">Log out</a>
+            <a class="nav-item nav-link"  href="{{url_for('site.logout')}}">Log out</a>
             {% else %}
-            <a class="nav-item nav-link"  href="{{url_for('login')}}">Log in</a>
-            <a class="nav-item nav-link"  href="{{url_for('signup')}}">sign up</a>
+            <a class="nav-item nav-link"  href="{{url_for('site.login')}}">Log in</a>
+            <a class="nav-item nav-link"  href="{{url_for('site.signup')}}">sign up</a>
             {% endif %}
 
         </div>

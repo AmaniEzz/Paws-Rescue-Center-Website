@@ -33,7 +33,7 @@
     {% endif %}
     <!--  -->
     <!-- Form for Editing the Pet -->
-    <form action="{{url_for('pet_details', pet_ID = pet.id)}}" method="POST" style="padding:5px;">
+    <form action="{{url_for('site.pet_details', pet_ID = pet.id)}}" method="POST" style="padding:5px;">
         {{ form.Fullname.label }}: <br>
         {{ form.Fullname }} 
         <br>
