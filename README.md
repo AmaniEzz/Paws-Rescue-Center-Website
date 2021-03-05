@@ -1,5 +1,7 @@
 
-<img src="https://pawshumane.org/wp-content/uploads/2018/03/PawsLogo2ColorNoTagPMS633-1.png" width=400>
+<img src="https://pawshumane.org/wp-content/uploads/2018/03/PawsLogo2ColorNoTagPMS633-1.png" width=200>
+
+
 # Visit webiste here ==> [Paws Rescue Centre](https://guarded-ridge-45162.herokuapp.com/)
 
 
