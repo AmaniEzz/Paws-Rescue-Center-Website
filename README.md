@@ -18,11 +18,17 @@ However, this project is not completed yet.
 | `DELETE` | `/pets/api/v1.0/delete/<int:pet_ID>/` |
 
 
-# Technologis used in this website:
+# Technologies used in this website:
 
-## Flask (Python)
+## 1) Sqlite3 database 
 
-#### libraries used:
+## 2) HTML/CSS
+
+## 3) Heroku deployment
+
+## 4) Flask (Python)
+
+### libraries used:
  
 
 | Lib                  | Description
@@ -37,11 +43,8 @@ However, this project is not completed yet.
 | `jsonify` | Creates a Response with the JSON representation of the given arguments with an application/json mimetype.
 
 
+------------
 
-## Sqlite3 database 
 
-## HTML/CSS
-
-## Heroku deployment
 
 
