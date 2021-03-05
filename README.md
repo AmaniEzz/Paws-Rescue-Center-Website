@@ -11,11 +11,11 @@ However, this project is not completed yet.
 
 | Method                  | URL
 | ------------------------- |:------------------- |
-| `GET` | '/pets/api/v1.0/pets' |
-| `GET` | '/pets/api/v1.0/details/<int:pet_ID>' |
-| `POST` | '/pets/api/v1.0/create' |
-| `PATCH` | '/pets/api/v1.0/update/<int:pet_ID>/<string:field>'
-| `DELETE` | '/pets/api/v1.0/delete/<int:pet_ID>/' |
+| `GET` | `/pets/api/v1.0/pets` |
+| `GET` | `/pets/api/v1.0/details/<int:pet_ID>` |
+| `POST` | `/pets/api/v1.0/create` |
+| `PATCH` | `/pets/api/v1.0/update/<int:pet_ID>/<string:field>` |
+| `DELETE` | `/pets/api/v1.0/delete/<int:pet_ID>/` |
 
 
 ## Technologis used in this website:
