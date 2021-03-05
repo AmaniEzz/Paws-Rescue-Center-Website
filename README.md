@@ -20,7 +20,7 @@ However, this project is not completed yet.
 
 # Technologis used in this website:
 
-### Flask (Python)
+## Flask (Python)
 
 #### libraries used:
  
@@ -38,10 +38,10 @@ However, this project is not completed yet.
 
 
 
-### Sqlite3 database 
+## Sqlite3 database 
 
-### HTML/CSS
+## HTML/CSS
 
-### Heroku deployment
+## Heroku deployment
 
 
