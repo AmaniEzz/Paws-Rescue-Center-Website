@@ -6,7 +6,7 @@
 
 
 ```
-This is a my very first web project using Flask web framework, to test what I have learnt so far.
+This is my very first web project using Flask web framework, to test what I have learnt so far.
 I have always loved animals, so the first idea that came to mind is a pet rescue centre.
 However, this project is not completed yet.
 ```
