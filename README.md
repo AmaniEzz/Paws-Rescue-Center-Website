@@ -18,7 +18,7 @@ However, this project is not completed yet.
 | `DELETE` | `/pets/api/v1.0/delete/<int:pet_ID>/` |
 
 
-## Technologis used in this website:
+# Technologis used in this website:
 
 ### Flask (Python)
 
