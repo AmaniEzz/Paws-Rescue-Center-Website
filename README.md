@@ -20,7 +20,8 @@ However, this project is not completed yet.
 | `PATCH` | `/pets/api/v1.0/update/<int:pet_ID>/<string:field>` |
 | `DELETE` | `/pets/api/v1.0/delete/<int:pet_ID>/` |
 
-
+#### You can test the API throught [Postman.com](https://www.postman.com/)
+--------
 # Technologies used in this website:
 
 ## 1) Sqlite3 database 
