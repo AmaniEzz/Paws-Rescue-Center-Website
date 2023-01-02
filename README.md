@@ -7,10 +7,11 @@
 | Method                  | URL
 | ------------------------- |:------------------- |
 | `GET` | `/pets/api/v1.0/pets` |
-| `GET` | `/pets/api/v1.0/details/<int:pet_ID>` |
+| `GET` | `/pets/api/v1.0/details/:pet_ID>
+` |
 | `POST` | `/pets/api/v1.0/create` |
-| `PATCH` | `/pets/api/v1.0/update/<int:pet_ID>/<string:field>` |
-| `DELETE` | `/pets/api/v1.0/delete/<int:pet_ID>/` |
+| `PATCH` | `/pets/api/v1.0/update/:pet_ID/:field` |
+| `DELETE` | `/pets/api/v1.0/delete/:pet_ID/` |
 
 #### You can test the API throught [Postman.com](https://www.postman.com/)
 --------
