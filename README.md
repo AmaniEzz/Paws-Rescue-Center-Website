@@ -7,7 +7,7 @@
 | Method                  | URL
 | ------------------------- |:------------------- |
 | `GET` | `/pets/api/v1.0/pets` |
-| `GET` | `/pets/api/v1.0/details/:pet_ID>
+| `GET` | `/pets/api/v1.0/details/:pet_ID`
 ` |
 | `POST` | `/pets/api/v1.0/create` |
 | `PATCH` | `/pets/api/v1.0/update/:pet_ID/:field` |
